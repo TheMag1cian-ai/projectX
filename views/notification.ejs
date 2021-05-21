@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Notification</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome5-overrides.min.css">
+    
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+    	<% if(result[0][0]['id'] === 1) { %>
+    		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+	            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/">
+	                    <div class="sidebar-brand-icon rotate-n-15"><i class="fab fa-xing"></i></i></div>
+	                    <div class="sidebar-brand-text mx-3"><span>Project X</span></div>
+	                </a>
+	                <hr class="sidebar-divider my-0">
+	                <ul class="navbar-nav text-light" id="accordionSidebar">
+	                    <li class="nav-item"><a class="nav-link" href="/admin"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/dustbin"><i class="fas fa-trash"></i></i>   <span>Dustbin</span></a></li>
+	                    <li class="nav-item"><a class="nav-link active" href="/notification"><i class="fas fa-bell"></i>  <span>Notifications</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/admin_cv"><i class="fas fa-shuttle-van"></i>   <span>Collection Van</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user-alt"></i>   <span>Profile</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/edit"><i class="fas fa-edit"></i>   <span>Edit</span></a></li>
+	                </ul>
+	                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+	            </div>
+	        </nav>
+    	<% } %>
+
+    	<% if(result[0][0]['id'] === 2) { %>
+    		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+	            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+	                    <div class="sidebar-brand-icon rotate-n-15"><i class="fab fa-xing"></i></i></div>
+	                    <div class="sidebar-brand-text mx-3"><span>Project X</span></div>
+	                </a>
+	                <hr class="sidebar-divider my-0">
+	                <ul class="navbar-nav text-light" id="accordionSidebar">
+	                    <li class="nav-item"><a class="nav-link" href="/cv"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/dustbin"><i class="fas fa-trash"></i></i>   <span>Dustbin</span></a></li>
+	                    <li class="nav-item"><a class="nav-link active" href="/notification"><i class="fas fa-bell"></i>  <span>Notifications</span></a></li>
+	                    <li class="nav-item"><a class="nav-link" href="/profile"><i class="fas fa-user-alt"></i>   <span>Profile</span></a></li>
+	                </ul>
+	                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+	            </div>
+	        </nav>
+    	<% } %>
+
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <h2>Notifications</h2>
+                        <form class="form-inline d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <div class="input-group-append"></div>
+                            </div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ml-auto">
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" href="/notification"><i class="fas fa-bell fa-fw"></i></a></div>
+                            </li>
+
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small"><%= result[0][0]['name'].toUpperCase() %></span><img class="border rounded-circle img-profile" src="img/avatars/avatar.png"></a>
+                                    <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="/profile"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid">
+                    <h3 class="text-dark mb-4">Details</h3>
+                    <div class="card shadow">
+                        <div class="card-header py-3">
+                            <p class="text-primary m-0 font-weight-bold">Limits</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Dustbin</th>
+                                            <th>Height(LIMIT)</th>
+                                            <th>Moisture(LIMIT)</th>
+                                            <th>Report Count</th>
+                                            <% if(result[0][0]['id'] === 1) { %>
+                                                <th>Reset Report</th>
+                                            <% } %>
+                                            <th>ALert</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% result[1].forEach(function(dustbin) { %>
+                                        	<tr>
+                                        		<td>Dustbin - <%= dustbin['id'] %></td>
+
+                                                <% if(dustbin['height'] > 90) { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-level-up-alt fa-2x" style="color: #e74a3b"></i></td>
+                                                <% } else if(dustbin['height'] > 70) { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-level-up-alt fa-2x" style="color: #f6c23e"></i></td>
+                                                <% } else { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-level-up-alt fa-2x" style="color: #1cc88a"></i></td>
+                                                <% } %>
+
+                                                <% if(dustbin['moisture'] > 90) { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-tint fa-2x" style="color: #e74a3b"></i></td>
+                                                <% } else if(dustbin['moisture'] > 70) { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-tint fa-2x" style="color: #f6c23e"></i></td>
+                                                <% } else { %>
+                                                    <td style="padding-left: 3rem;"><i class="fas fa-tint fa-2x" style="color: #1cc88a"></i></td>
+                                                <% } %>
+
+                                                <td style="padding-left: 5%;"><%= dustbin['report'] %></td>
+
+                                                <% if(result[0][0]['id'] === 1) { %>
+                                                    <td style="padding-left: 4%;"><a href="/reset/<%= dustbin['id'] %>"><i class="fas fa-power-off fa-2x"></i></a></td>
+                                                <% } %>
+
+                                                <% if(result[0][0]['id'] === 1) { %>
+                                                    <% if(dustbin['alert'] === 0) { %>
+                                                        <td><a href="/alert/<%= dustbin['id'] %>/<%= dustbin['alert'] %>"><i class="fas fa-exclamation" style="padding-left: 1.5rem; color: #1cc88a;"></i></a></td>
+                                                    <% } else if(dustbin['alert'] === 1) { %>
+                                                        <td><a href="/alert/<%= dustbin['id'] %>/<%= dustbin['alert'] %>"><i class="fas fa-exclamation" style="padding-left: 1.5rem; color: #e74a3b;"></i></a></td>
+                                                    <% } %>
+                                                <% } %>
+
+                                                <% if(result[0][0]['id'] === 2) { %>
+                                                    <% if(dustbin['alert'] === 0) { %>
+                                                        <td><i class="fas fa-exclamation" style="padding-left: 1.5rem; color: #1cc88a;"></i></td>
+                                                    <% } else if(dustbin['alert'] === 1) { %>
+                                                        <td><i class="fas fa-exclamation" style="padding-left: 1.5rem; color: #e74a3b"></i></td>
+                                                    <% } %>
+                                                <% } %>
+                                        	</tr>
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Project X 2021</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
