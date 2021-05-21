@@ -644,7 +644,7 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(../img/banner-bg.png);
+  background-image: url(../img/bg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
