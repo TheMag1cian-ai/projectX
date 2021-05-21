@@ -551,6 +551,6 @@ app.get('/cv_exist', function(req, res) {
 	}
 });
 
-app.listen('3000' || process.env.PORT, function(req, res) {
+app.listen(process.env.PORT, function(req, res) {
 	console.log('server started!!')
 });
